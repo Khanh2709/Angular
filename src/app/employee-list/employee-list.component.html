@@ -1,0 +1,35 @@
+<app-employee-search></app-employee-search>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Employee List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped" >
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Salary</th>
+        <th>Department</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let employee of employees | async">
+        <td>{{employee.id}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.salary_emp}}</td>
+        <td>
+          <p>depId :{{employee.department.depId}}</p>
+          <p>depName :{{employee.department.depName}}</p>
+        </td>
+        <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Delete</button>
+          <button (click)="updateEmployee(employee.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

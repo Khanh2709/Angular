@@ -1,0 +1,28 @@
+<app-department-search></app-department-search>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Department List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>DepId</th>
+        <th>DepName</th>
+        <th>Employee</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let department of departments | async">
+        <td>{{department.depId}}</td>
+        <td>{{department.depName}}</td>
+        <td><p>{{department.listEmployee.firstName}}</p></td>
+        <td><button (click)="deleteDepartment(department.depId)" class="btn badge-danger">Delete</button>
+        <button (click)="updateDepartment(department.depId)" class="btn btn-success" style="margin: 1em">Update</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

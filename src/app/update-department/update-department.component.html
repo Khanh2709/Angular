@@ -1,0 +1,26 @@
+<h3>Update Department</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="depId">DepId</label>
+      <input type="text" class="form-control" id="depId" required [(ngModel)]="department.depId" name="depId">
+    </div>
+    <div class="form-group">
+      <label for="depName">DepName</label>
+      <input type="text" class="form-control" id="depName" required [(ngModel)]="department.depName"  name="depName">
+    </div>
+<!--    <div class="form-group">-->
+<!--      <label for="lastName">lastName</label>-->
+<!--      <input type="text" class="form-control" id="lastName" required [(ngModel)]="department.emp.lastName" name="lastName">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="firstName">firstName</label>-->
+<!--      <input type="text" class="form-control" id="firstName" required [(ngModel)]="department.emp.firstName" name="firstName">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="salary_emp">salary_emp</label>-->
+<!--      <input type="text" class="form-control" id="salary_emp" required [(ngModel)]="department.emp.salary_emp" name="salary_emp">-->
+<!--    </div>-->
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

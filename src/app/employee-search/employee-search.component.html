@@ -1,0 +1,11 @@
+<div id="employees">
+  <h4>employee search</h4>
+  <input #searchBox (keyup)="search(searchBox.value)" />
+  <ul class="emp">
+    <li *ngFor="let employees of employees$ | async" class="EmployeeListItem">
+      <a routerLink="/lastname/{{employees.id}}">
+        {{employees.firstName}} {{employees.lastName}}-{{employees.department.depId}}-{{employees.department.depName}}
+      </a>
+    </li>
+  </ul>
+</div>
